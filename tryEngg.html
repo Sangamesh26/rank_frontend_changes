@@ -68,8 +68,7 @@
 						 <p><span id="demo_tlr3" class="demo_tlr"></></span></p>
 						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR4">
 						 <p><span id="demo_tlr4" class="demo_tlr"></></span></p>
-						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR5">
-						 <p><span id="demo_tlr5" class="demo_tlr"></></span></p>
+					
 						 <input type="text" name="tlr" id="tlr_one" style="width : 8%;height:30px">
 						 </div>
 				
@@ -84,8 +83,7 @@
 						 <p><span id="demo_rpc3" class="demo_rpc"></span></p>
 						 <input type="range" min="1" max="100" name="rpc4" class="slider" value="50" id="myRangeRPC4">
 						 <p><span id="demo_rpc4" class="demo_rpc"></span></p>
-						 <input type="range" min="1" max="100" name="rpc5" class="slider" value="50" id="myRangeRPC5">
-						 <p><span id="demo_rpc5" class="demo_rpc"></span></p>
+			
 						 <input type="text" name="rpc" id="rpc_one" style="width : 8%;height:30px">
 						 </div>
 						
@@ -99,8 +97,7 @@
 						 <p><span id="demo_go3" class="demo_go"></span></p>
 						 <input type="range" min="1" max="100" name="go4" class="slider" value="50" id="myRangeGO4">
 						 <p><span id="demo_go4" class="demo_go"></span></p>
-						 <input type="range" min="1" max="100" name="go5" class="slider" value="50" id="myRangeGO5">
-						 <p><span id="demo_go5" class="demo_go"></span></p>
+						
 						 <input type="text" name="go" id="go_one" style="width : 8%;height:30px">
 						 </div>
 						<label>Enter the valid score of OI &nbsp;&nbsp;&nbsp;&nbsp;</label><br></br>
@@ -113,23 +110,14 @@
 						 <p><span id="demo_oi3" class="demo_oi"></span></p>
 						 <input type="range" min="1" max="100" name="oi4" class="slider" value="50" id="myRangeOI4">
 						 <p><span id="demo_oi4" class="demo_oi"></span></p>
-						 <input type="range" min="1" max="100" name="oi5" class="slider" value="50" id="myRangeOI5">
-						 <p><span id="demo_oi5" class="demo_oi"></span></p>
+						
 						 <input type="text" name="oi" id="oi_one" style="width : 8%;height:30px">
 						 </div>
 						<label>Enter the valid score of PPN &nbsp;</label><br></br>
 						 <div class = "ppn_display">
-						 <input type="range" min="1" max="100" name="ppn1" class="slider" value="50" id="myRangePPN1">
-						 						 <p><span id="demo_ppn1" class="demo_ppn"></span></p>
-						 <input type="range" min="1" max="100" name="ppn2" class="slider" value="50" id="myRangePPN2">
-						 <p><span id="demo_ppn2" class="demo_ppn"></span></p>
-						 <input type="range" min="1" max="100" name="ppn3" class="slider" value="50" id="myRangePPN3">
-						 <p><span id="demo_ppn3" class="demo_ppn"></span></p>
-						 <input type="range" min="1" max="100" name="ppn4" class="slider" value="50" id="myRangePPN4">
-						 <p><span id="demo_ppn4" class="demo_ppn"></span></p>
-						 <input type="range" min="1" max="100" name="ppn5" class="slider" value="50" id="myRangePPN5">
-						 <p><span id="demo_ppn5" class="demo_ppn"></span></p>
-						 <input type="text" name="ppn" id="ppn_one" style="width : 8%;height:30px">
+					
+			
+						 <input type="text" name="ppn" id="ppn_one" class = "ppn_type">
 						 </div> <br></br>
 
 <!--end-->
@@ -166,10 +154,7 @@
 	document.getElementById("demo_tlr4").innerHTML = this.value;
 	}
 	
-		document.getElementById("demo_tlr5").innerHTML=document.getElementById("myRangeTLR5").value;
-	document.getElementById("myRangeTLR5").oninput = function() {
-	document.getElementById("demo_tlr5").innerHTML = this.value;
-	}
+
 	
 		document.getElementById("demo_rpc1").innerHTML=document.getElementById("myRangeRPC1").value;
 	document.getElementById("myRangeRPC1").oninput = function() {
@@ -192,11 +177,7 @@
 	document.getElementById("demo_rpc4").innerHTML = this.value;
 	}
 	
-		document.getElementById("demo_rpc5").innerHTML=document.getElementById("myRangeRPC5").value;
-	document.getElementById("myRangeRPC5").oninput = function() {
-	document.getElementById("demo_rpc5").innerHTML = this.value;
-	}
-	
+
 		document.getElementById("demo_go1").innerHTML=document.getElementById("myRangeGO1").value;
 	document.getElementById("myRangeGO1").oninput = function() {
 	document.getElementById("demo_go1").innerHTML = this.value;
@@ -215,10 +196,7 @@
 	document.getElementById("myRangeGO4").oninput = function() {
 	document.getElementById("demo_go4").innerHTML = this.value;
 	}
-			document.getElementById("demo_go5").innerHTML=document.getElementById("myRangeGO5").value;
-	document.getElementById("myRangeGO5").oninput = function() {
-	document.getElementById("demo_go5").innerHTML = this.value;
-	}
+
 	
 		document.getElementById("demo_oi1").innerHTML=document.getElementById("myRangeOI1").value;
 	document.getElementById("myRangeOI1").oninput = function() {
@@ -241,34 +219,9 @@
 	}
 	
 	
-		document.getElementById("demo_oi5").innerHTML=document.getElementById("myRangeOI5").value;
-	document.getElementById("myRangeOI5").oninput = function() {
-	document.getElementById("demo_oi5").innerHTML = this.value;
-	}
+
 	
-		document.getElementById("demo_ppn1").innerHTML=document.getElementById("myRangePPN1").value;
-	document.getElementById("myRangePPN1").oninput = function() {
-	document.getElementById("demo_ppn1").innerHTML = this.value;
-	}
-	
-		document.getElementById("demo_ppn2").innerHTML=document.getElementById("myRangePPN2").value;
-	document.getElementById("myRangePPN2").oninput = function() {
-	document.getElementById("demo_ppn2").innerHTML = this.value;
-	}
-	
-		document.getElementById("demo_ppn3").innerHTML=document.getElementById("myRangePPN3").value;
-	document.getElementById("myRangePPN3").oninput = function() {
-	document.getElementById("demo_ppn3").innerHTML = this.value;
-	}
-	
-		document.getElementById("demo_ppn4").innerHTML=document.getElementById("myRangePPN4").value;
-	document.getElementById("myRangePPN4").oninput = function() {
-	document.getElementById("demo_ppn4").innerHTML = this.value;
-	}
-		document.getElementById("demo_ppn5").innerHTML=document.getElementById("myRangePPN5").value;
-	document.getElementById("myRangePPN5").oninput = function() {
-	document.getElementById("demo_ppn5").innerHTML = this.value;
-	}
+		
 	</script>
     	
     	

@@ -308,16 +308,16 @@ margin-top:230px;
 {
 	margin-left : 10%;
 }
-#myRangePPN1,#myRangePPN2,#myRangePPN3,#myRangePPN4,#myRangePPN5,#ppn_one
+#myRangePPN1,#myRangePPN2,#myRangePPN3,#myRangePPN4,#myRangePPN5
 {
 	margin-left : 10%;
 }
-.demo_tlr{
+.demo_tlr,.demo_go,.demo_oi,.demo_rpc,.demo_ppn{
 	position:relative;
-	left:-270%;
-	top:60%;
+	left:-300%;
+	top:70%;
 }
-.demo_go{
+/*.demo_go{
 	position:relative;
 	left:-270%;
 	top:60%;
@@ -336,4 +336,9 @@ margin-top:230px;
 	position:relative;
 	left:-270%;
 	top:60%;
+}*/
+#ppn_one
+{
+	margin-left : 39%;
+	width : 20%;
 }
