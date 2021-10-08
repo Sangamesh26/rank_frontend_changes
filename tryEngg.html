@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Ranking prediction</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+	<!-- trying scroller js -->
+
+
+
+	<!-- end -->
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="containers">
+            <h2 class='container-heading'><span class="heading_font">Rank Predictor</span></h2>
+            <div>
+    			<p style="	color: #ffffff;">NIRF Ranking - Engineering</p>
+    		</div>
+    		<form action="{{ url_for('index') }}">
+        		<input type="submit" class="my-cta-button home_rank" value="Home">
+    		</form>    		
+    	</div>
+    	
+        <div class="notes">
+		  <p><b>Instructions</b>:<br>	* Enter the scores(1-100) of each parameter in their respective text fields and check the rank .<br> * The model is trained for predicting the ranks for the year 2020.</p>
+		</div>
+    	
+    	
+    	<!-- Text Area -->
+		<div class="container">
+		
+					<form action="{{ url_for('predict') }}" method="POST">
+				     <!-- original --
+                        <label>Enter the valid score of TLR &nbsp;</label>
+						<input class="form-input" type="text" name="tlr" placeholder="TLR Score out of 100">  <br>
+						<label>Enter the valid score of RPC&nbsp;</label>
+						<input class="form-input" type="text" name="rpc" placeholder="RPC score out of 100"> <br>
+						<label>Enter the valid score of GO &nbsp;&nbsp;</label>
+						<input class="form-input" type="text" name="go" placeholder="GO score out of 100"> <br>
+						<label>Enter the valid score of OI &nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<input class="form-input" type="text" name="oi" placeholder="OI score out of 100"><br>
+						<label>Enter the valid score of PPN &nbsp;</label>
+						<input class="form-input" type="text" name="perception" placeholder="PERCEPTION score out of 100"> <br></br>
+					 <!-- end of original -->
+
+<!-- trying to make scroller-->
+                        <label>Enter the valid score of TLR &nbsp;</label><br></br>
+						<div class = "tlr_display">
+						
+						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR1">
+						 <p><span id="demo_tlr1" class="demo_tlr"></span></p>
+					
+						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR2">
+						 <p><span id="demo_tlr2" class="demo_tlr"></></span></p>
+						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR3">
+						 <p><span id="demo_tlr3" class="demo_tlr"></></span></p>
+						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR4">
+						 <p><span id="demo_tlr4" class="demo_tlr"></></span></p>
+						 <input type="range" min="1" max="100" name="tlr1" class="slider" value="50" id="myRangeTLR5">
+						 <p><span id="demo_tlr5" class="demo_tlr"></></span></p>
+						 <input type="text" name="tlr" id="tlr_one" style="width : 8%;height:30px">
+						 </div>
+				
+										
+						<label>Enter the valid score of RPC&nbsp;</label><br></br>
+						<div class = "rpc_display">
+						 <input type="range" min="1" max="100" name="rpc1" class="slider" value="50" id="myRangeRPC1">
+						  <p><span id="demo_rpc1" class="demo_rpc"></span></p>
+						 <input type="range" min="1" max="100" name="rpc2" class="slider" value="50" id="myRangeRPC2">
+						 <p><span id="demo_rpc2" class="demo_rpc"></span></p>
+						 <input type="range" min="1" max="100" name="rpc3" class="slider" value="50" id="myRangeRPC3">
+						 <p><span id="demo_rpc3" class="demo_rpc"></span></p>
+						 <input type="range" min="1" max="100" name="rpc4" class="slider" value="50" id="myRangeRPC4">
+						 <p><span id="demo_rpc4" class="demo_rpc"></span></p>
+						 <input type="range" min="1" max="100" name="rpc5" class="slider" value="50" id="myRangeRPC5">
+						 <p><span id="demo_rpc5" class="demo_rpc"></span></p>
+						 <input type="text" name="rpc" id="rpc_one" style="width : 8%;height:30px">
+						 </div>
+						
+						<label>Enter the valid score of GO &nbsp;&nbsp;</label><br></br>
+						 <div class = "go_display">
+						 <input type="range" min="1" max="100" name="go1" class="slider" value="50" id="myRangeGO1">
+						  <p><span id="demo_go1" class="demo_go"></span></p>
+						 <input type="range" min="1" max="100" name="go2" class="slider" value="50" id="myRangeGO2">
+						 <p><span id="demo_go2" class="demo_go"></span></p>
+						 <input type="range" min="1" max="100" name="go3" class="slider" value="50" id="myRangeGO3">
+						 <p><span id="demo_go3" class="demo_go"></span></p>
+						 <input type="range" min="1" max="100" name="go4" class="slider" value="50" id="myRangeGO4">
+						 <p><span id="demo_go4" class="demo_go"></span></p>
+						 <input type="range" min="1" max="100" name="go5" class="slider" value="50" id="myRangeGO5">
+						 <p><span id="demo_go5" class="demo_go"></span></p>
+						 <input type="text" name="go" id="go_one" style="width : 8%;height:30px">
+						 </div>
+						<label>Enter the valid score of OI &nbsp;&nbsp;&nbsp;&nbsp;</label><br></br>
+						 						<div class = "oi_display">
+						 <input type="range" min="1" max="100" name="oi1" class="slider" value="50" id="myRangeOI1">
+						 <p><span id="demo_oi1" class="demo_oi"></span></p>
+						 <input type="range" min="1" max="100" name="oi2" class="slider" value="50" id="myRangeOI2">
+						 <p><span id="demo_oi2" class="demo_oi"></span></p>
+						 <input type="range" min="1" max="100" name="oi3" class="slider" value="50" id="myRangeOI3">
+						 <p><span id="demo_oi3" class="demo_oi"></span></p>
+						 <input type="range" min="1" max="100" name="oi4" class="slider" value="50" id="myRangeOI4">
+						 <p><span id="demo_oi4" class="demo_oi"></span></p>
+						 <input type="range" min="1" max="100" name="oi5" class="slider" value="50" id="myRangeOI5">
+						 <p><span id="demo_oi5" class="demo_oi"></span></p>
+						 <input type="text" name="oi" id="oi_one" style="width : 8%;height:30px">
+						 </div>
+						<label>Enter the valid score of PPN &nbsp;</label><br></br>
+						 <div class = "ppn_display">
+						 <input type="range" min="1" max="100" name="ppn1" class="slider" value="50" id="myRangePPN1">
+						 						 <p><span id="demo_ppn1" class="demo_ppn"></span></p>
+						 <input type="range" min="1" max="100" name="ppn2" class="slider" value="50" id="myRangePPN2">
+						 <p><span id="demo_ppn2" class="demo_ppn"></span></p>
+						 <input type="range" min="1" max="100" name="ppn3" class="slider" value="50" id="myRangePPN3">
+						 <p><span id="demo_ppn3" class="demo_ppn"></span></p>
+						 <input type="range" min="1" max="100" name="ppn4" class="slider" value="50" id="myRangePPN4">
+						 <p><span id="demo_ppn4" class="demo_ppn"></span></p>
+						 <input type="range" min="1" max="100" name="ppn5" class="slider" value="50" id="myRangePPN5">
+						 <p><span id="demo_ppn5" class="demo_ppn"></span></p>
+						 <input type="text" name="ppn" id="ppn_one" style="width : 8%;height:30px">
+						 </div> <br></br>
+
+<!--end-->
+
+
+						<input type="submit" class="my-cta-button" value="Predict">
+						<br></br>
+					</form>
+	
+		</div>
+		
+    
+    	
+    		<script>
+	
+	document.getElementById("demo_tlr1").innerHTML=document.getElementById("myRangeTLR1").value;
+	document.getElementById("myRangeTLR1").oninput = function() {
+	document.getElementById("demo_tlr1").innerHTML = this.value;
+	}
+	
+	
+		document.getElementById("demo_tlr2").innerHTML=document.getElementById("myRangeTLR2").value;
+	document.getElementById("myRangeTLR2").oninput = function() {
+	document.getElementById("demo_tlr2").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_tlr3").innerHTML=document.getElementById("myRangeTLR3").value;
+	document.getElementById("myRangeTLR3").oninput = function() {
+	document.getElementById("demo_tlr3").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_tlr4").innerHTML=document.getElementById("myRangeTLR4").value;
+	document.getElementById("myRangeTLR4").oninput = function() {
+	document.getElementById("demo_tlr4").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_tlr5").innerHTML=document.getElementById("myRangeTLR5").value;
+	document.getElementById("myRangeTLR5").oninput = function() {
+	document.getElementById("demo_tlr5").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_rpc1").innerHTML=document.getElementById("myRangeRPC1").value;
+	document.getElementById("myRangeRPC1").oninput = function() {
+	document.getElementById("demo_rpc1").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_rpc2").innerHTML=document.getElementById("myRangeRPC2").value;
+	document.getElementById("myRangeRPC2").oninput = function() {
+	document.getElementById("demo_rpc2").innerHTML = this.value;
+	}
+	
+	
+		document.getElementById("demo_rpc3").innerHTML=document.getElementById("myRangeRPC3").value;
+	document.getElementById("myRangeRPC3").oninput = function() {
+	document.getElementById("demo_rpc3").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_rpc4").innerHTML=document.getElementById("myRangeRPC4").value;
+	document.getElementById("myRangeRPC4").oninput = function() {
+	document.getElementById("demo_rpc4").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_rpc5").innerHTML=document.getElementById("myRangeRPC5").value;
+	document.getElementById("myRangeRPC5").oninput = function() {
+	document.getElementById("demo_rpc5").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_go1").innerHTML=document.getElementById("myRangeGO1").value;
+	document.getElementById("myRangeGO1").oninput = function() {
+	document.getElementById("demo_go1").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_go2").innerHTML=document.getElementById("myRangeGO2").value;
+	document.getElementById("myRangeGO2").oninput = function() {
+	document.getElementById("demo_go2").innerHTML = this.value;
+	}
+		document.getElementById("demo_go3").innerHTML=document.getElementById("myRangeGO3").value;
+	document.getElementById("myRangeGO3").oninput = function() {
+	document.getElementById("demo_go3").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_go4").innerHTML=document.getElementById("myRangeGO4").value;
+	document.getElementById("myRangeGO4").oninput = function() {
+	document.getElementById("demo_go4").innerHTML = this.value;
+	}
+			document.getElementById("demo_go5").innerHTML=document.getElementById("myRangeGO5").value;
+	document.getElementById("myRangeGO5").oninput = function() {
+	document.getElementById("demo_go5").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_oi1").innerHTML=document.getElementById("myRangeOI1").value;
+	document.getElementById("myRangeOI1").oninput = function() {
+	document.getElementById("demo_oi1").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_oi2").innerHTML=document.getElementById("myRangeOI2").value;
+	document.getElementById("myRangeOI2").oninput = function() {
+	document.getElementById("demo_oi2").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_oi3").innerHTML=document.getElementById("myRangeOI3").value;
+	document.getElementById("myRangeOI3").oninput = function() {
+	document.getElementById("demo_oi3").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_oi4").innerHTML=document.getElementById("myRangeOI4").value;
+	document.getElementById("myRangeOI4").oninput = function() {
+	document.getElementById("demo_oi4").innerHTML = this.value;
+	}
+	
+	
+		document.getElementById("demo_oi5").innerHTML=document.getElementById("myRangeOI5").value;
+	document.getElementById("myRangeOI5").oninput = function() {
+	document.getElementById("demo_oi5").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_ppn1").innerHTML=document.getElementById("myRangePPN1").value;
+	document.getElementById("myRangePPN1").oninput = function() {
+	document.getElementById("demo_ppn1").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_ppn2").innerHTML=document.getElementById("myRangePPN2").value;
+	document.getElementById("myRangePPN2").oninput = function() {
+	document.getElementById("demo_ppn2").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_ppn3").innerHTML=document.getElementById("myRangePPN3").value;
+	document.getElementById("myRangePPN3").oninput = function() {
+	document.getElementById("demo_ppn3").innerHTML = this.value;
+	}
+	
+		document.getElementById("demo_ppn4").innerHTML=document.getElementById("myRangePPN4").value;
+	document.getElementById("myRangePPN4").oninput = function() {
+	document.getElementById("demo_ppn4").innerHTML = this.value;
+	}
+		document.getElementById("demo_ppn5").innerHTML=document.getElementById("myRangePPN5").value;
+	document.getElementById("myRangePPN5").oninput = function() {
+	document.getElementById("demo_ppn5").innerHTML = this.value;
+	}
+	</script>
+    	
+    	
+    	<!-- Result --
+		<div class="results1">
+		
+				<b><h3 style="font-family: Times New Roman, Times, serif;color:#ce55bf;">{{prediction}}</h3></b>
+		
+		</div>-->
+         
+         
+         
+        <!-- Footer -->
+       <div class='footer'>
+           <p class='footer-description'>JSS SCIENCE AND TECHNOLOGY UNIVERSITY.</p>
+       </div>
+
+    </body>
+</html>
